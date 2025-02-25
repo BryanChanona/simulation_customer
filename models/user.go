@@ -8,6 +8,6 @@ type User struct {
 	Email string `json:"email"`
 }
 
-type Response struct {
+type ResponseUSer struct {
     User []User `json:"users"`
 }

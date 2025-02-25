@@ -11,12 +11,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var arrayUsers []models.User
+var arrayBooks []models.Book
 
-
-func CheckListUsers(ctx *gin.Context){
+func CheckListoBooks(ctx *gin.Context) {
 	for {
-		response, _ := http.Get("http://localhost:8080/users/")
+		response, _ := http.Get("http://localhost:8080/books/")
 
 		if response.StatusCode == http.StatusOK {
 
@@ -29,8 +28,7 @@ func CheckListUsers(ctx *gin.Context){
 				return
 			}
 
-		
-			var result models.ResponseUSer
+			var result models.ResponseBook
 
 			err = json.Unmarshal(body, &result)
 
@@ -39,14 +37,13 @@ func CheckListUsers(ctx *gin.Context){
 				return
 			}
 
-			if len(arrayUsers) != len(result.User) {
+			if len(arrayBooks) != len(result.Book) {
 				fmt.Println("Hay cambios")
-				
-				arrayUsers = result.User
+
+				arrayBooks = result.Book
 			} else {
 				fmt.Println("No hay cambios")
 			}
-
 
 		} else {
 			fmt.Println("Error con código de estado: ", response.StatusCode)
