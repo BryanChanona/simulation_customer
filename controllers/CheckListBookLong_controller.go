@@ -64,6 +64,6 @@ func CheckListBookLong(ctx *gin.Context) {
 		fmt.Println("Esto es lo que nos dice el server:", result.Message)
 
 		// Esperar antes de hacer otra solicitud
-		time.Sleep(20 * time.Second)
+		time.Sleep(10 * time.Second)
 	}
 }

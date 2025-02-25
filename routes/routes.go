@@ -12,6 +12,6 @@ func UserRouter(router *gin.Engine){
 		routes.GET("/users",controllers.CheckListUsers)
 		routes.GET("/books",controllers.CheckListoBooks)
 		routes.GET("/booksLong",controllers.CheckListBookLong)
-		// routes.GET("",)
+		routes.GET("/usersLong",controllers.CheckListUserLong)
 	}
 }
